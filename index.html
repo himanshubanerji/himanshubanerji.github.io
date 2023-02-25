@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himanshu Banerji</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> -->
+
+    <script src="https://kit.fontawesome.com/e73240efb4.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.svg" alt="">
+        </div>
+        <button class="nav-toggle" aria-label="'toggle-navigation">
+            <span class="hamburger"></span>
+        </button>
+
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#home" class="nav__link" id="my-link" data-text="Home">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#services" class="nav__link" data-text="Services">My Services</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link" data-text="About">About me</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#work" class="nav__link" data-text="Work">My Work</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro">
+            Hi, I am <strong>Himanshu Banerji</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">
+            iOS DEVELOPER
+        </p>
+        <img src="img/profile.jpeg" alt="a picture of me smiling" class="intro__img">
+    </section>
+
+
+    <!-- My services -->
+    <section class="my-services" id="services">
+        <h2 class="section__title section__title--services">What I do</h2>
+        <div class="services">
+            <div class="service">
+                <h3>iOS Development</h3>
+                <p>I am currently developing an app that integrates the Pomodoro technique with to-do lists to improve
+                    my time management skills. This app will allow me to input my schedule and receive notifications for
+                    scheduled work periods, while simultaneously initiating a Pomodoro timer to track the duration of
+                    each work session.</p>
+            </div> <!-- service -->
+
+            <div class="service">
+                <h3>Programming</h3>
+                <p>Taking part in coding contest and learning Data Structure and Algorithm to make better apps and
+                    websites.Currently part of coding clubs where I take codemeets and help in conduct code events.</p>
+            </div> <!-- service -->
+
+            <div class="service">
+                <h3>Web Development</h3>
+                <p>As my first domain,I have basic knowledge of html,css and javascript. Out of
+                    which I spent the most part working to develop responsive layouts ensuring that my websites look
+                    great across different devices and screen sizes,the pre-layout to which was done in figma and
+                    then implemented them in the web.</p>
+            </div> <!-- service -->
+        </div> <!-- services -->
+
+        <a href="#work" class="btn">see my work</a>
+    </section>
+
+
+    <!-- About Me -->
+    <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">Who I am</h2>
+        <p class="section__subtitle section__subtitle--about">Programmer & Application developer based out of
+            MIT,Manipal</p>
+
+        <div class="about-me__body">
+            <p>Hi everyone👋, I'm Himanshu a 20-year-old CSE Undergrad currently doing iOS Development to make a
+                pomodoro app which could notify me about my study and work time based on the schedule I enter.
+                Being an active learner ,I really love and have fun teaching the things I learnt as well.
+            </p>
+            <p>Apart from this I do beatboxing, play some games and read books in my free time.</p>
+        </div>
+
+        <img src="img/about-me-02.jpg" alt="me on a rock" class="about-me__img">
+    </section>
+
+
+    <!-- My Work -->
+    <section class="my-work" id="work">
+        <h2 class="section__title section__title--work">My Work</h2>
+        <p class="section__subtitle section__subtitle--work">A selection of my range of work</p>
+
+        <div class="portfolio">
+            <!-- Portfolio item 01 -->
+            <a href="#" class="portfolio__item">
+                <img src="img/app-01.jpg" alt="" class="portfolio__img">
+            </a>
+            <!-- Portfolio item 02 -->
+            <a href="#" class="portfolio__item">
+                <img src="img/app-02.jpg" alt="" class="portfolio__img">
+            </a>
+            <!-- Portfolio item 03 -->
+            <a href="#" class="portfolio__item">
+                <img src="img/app-03.jpg" alt="" class="portfolio__img">
+            </a>
+
+            <!-- Portfolio item 04 -->
+            <a href="#" class="portfolio__item">
+                <img src="img/app-04.jpg" alt="" class="portfolio__img">
+            </a>
+            <!-- Portfolio item 05 -->
+            <a href="#" class="portfolio__item">
+                <img src="img/app-05.jpg" alt="" class="portfolio__img">
+            </a>
+            <!-- Portfolio item 06 -->
+            <a href="#" class="portfolio__item">
+                <img src="img/app-03.jpg" alt="" class="portfolio__img">
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="mailto:heman.ehv@gmail.com" class="footer__link">heman.ehv@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/himanshubanerji">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </li>
+            <li class="social-list__item"><a class="social-list__link"
+                    href="https://www.linkedin.com/in/himanshu-banerji-a7085521a/">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://twitter.com/himanshubanerji">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.instagram.com/himanshu.banerji/">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
