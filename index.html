@@ -1,177 +1,2379 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himanshu Banerji</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-generated website">
+  <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow">
 
-    <script src="https://kit.fontawesome.com/e73240efb4.js" crossorigin="anonymous"></script>
+  <!-- Performance optimization: Preload critical resources -->
+  <link rel="preload" href="js/preload_resources.js" as="script">
+  <link rel="preload" href="css/css2.css" as="style">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap">
+  <!-- Core CSS -->
+  <!-- Main StyleSheet -->
+  <script src="js/preload_resources.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f8f8f8',
+              100: '#e8e8e8',
+              200: '#d3d3d3',
+              300: '#a3a3a3',
+              400: '#737373',
+              500: '#525252',
+              600: '#404040',
+              700: '#262626',
+              800: '#171717',
+              900: '#0a0a0a',
+              950: '#030303',
+            },
+            secondary: {
+              50: '#f8f8f8',
+              100: '#e8e8e8',
+              200: '#d3d3d3',
+              300: '#a3a3a3',
+              400: '#737373',
+              500: '#525252',
+              600: '#404040',
+              700: '#262626',
+              800: '#171717',
+              900: '#0a0a0a',
+              950: '#030303',
+            },
+            accent: {
+              50: '#f8f8f8',
+              100: '#e8e8e8',
+              200: '#d3d3d3',
+              300: '#a3a3a3',
+              400: '#737373',
+              500: '#525252',
+              600: '#404040',
+              700: '#262626',
+              800: '#171717',
+              900: '#0a0a0a',
+              950: '#030303',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            heading: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          spacing: {
+            '18': '4.5rem',
+            '22': '5.5rem',
+            '30': '7.5rem',
+          },
+          maxWidth: {
+            '8xl': '88rem',
+            '9xl': '96rem',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in',
+            'fade-out': 'fadeOut 0.5s ease-out',
+            'slide-up': 'slideUp 0.5s ease-out',
+            'slide-down': 'slideDown 0.5s ease-out',
+            'slide-left': 'slideLeft 0.5s ease-out',
+            'slide-right': 'slideRight 0.5s ease-out',
+            'scale-in': 'scaleIn 0.5s ease-out',
+            'scale-out': 'scaleOut 0.5s ease-out',
+            'spin-slow': 'spin 3s linear infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-slow': 'bounce 3s infinite',
+            'float': 'float 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            fadeOut: {
+              '0%': { opacity: '1' },
+              '100%': { opacity: '0' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            slideDown: {
+              '0%': { transform: 'translateY(-20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            slideLeft: {
+              '0%': { transform: 'translateX(20px)', opacity: '0' },
+              '100%': { transform: 'translateX(0)', opacity: '1' },
+            },
+            slideRight: {
+              '0%': { transform: 'translateX(-20px)', opacity: '0' },
+              '100%': { transform: 'translateX(0)', opacity: '1' },
+            },
+            scaleIn: {
+              '0%': { transform: 'scale(0.9)', opacity: '0' },
+              '100%': { transform: 'scale(1)', opacity: '1' },
+            },
+            scaleOut: {
+              '0%': { transform: 'scale(1.1)', opacity: '0' },
+              '100%': { transform: 'scale(1)', opacity: '1' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+          },
+          aspectRatio: {
+            'portrait': '3/4',
+            'landscape': '4/3',
+            'ultrawide': '21/9',
+          },
+        },
+      },
+      variants: {
+        extend: {
+          opacity: ['disabled'],
+          cursor: ['disabled'],
+          backgroundColor: ['active', 'disabled'],
+          textColor: ['active', 'disabled'],
+        },
+      },
+    }
+  </script>
 
-    <link rel="stylesheet" href="css/style.css">
+  <!-- Utilities and Components -->
+  <script defer="" src="js/cdn.min.js"></script>
+  <script defer="" src="js/apexcharts.min.js"></script>
 
+  <!-- Optimized Font Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="css/css2.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Base Styles -->
+  <style>
+    * {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    /* Webkit browsers like Chrome, Safari, newer Edge */
+    *::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #666;
+    }
+
+    /* Remove tap highlight on mobile */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Improve text rendering */
+    body {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Focus outline styles */
+    :focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+
+    /* Print styles */
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+
+      a[href]:after {
+        content: " (" attr(href) ")";
+      }
+    }
+  </style>
+
+  <!-- Enhanced Image Handler -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            if (img.dataset.src) {
+              const tempImage = new Image();
+              tempImage.onload = () => {
+                img.src = img.dataset.src;
+                img.classList.remove('opacity-0');
+                img.classList.add('opacity-100');
+              };
+              tempImage.src = img.dataset.src;
+              img.removeAttribute('data-src');
+              observer.unobserve(img);
+            }
+          }
+        });
+      }, {
+        rootMargin: '50px 0px',
+        threshold: 0.01
+      });
+
+      const loadImage = (img) => {
+        if ('loading' in HTMLImageElement.prototype) {
+          img.loading = 'lazy';
+        }
+
+        img.classList.add('transition-opacity', 'duration-300', 'opacity-0');
+
+        img.onerror = () => {
+          const width = img.getAttribute('width') || img.clientWidth || 300;
+          const height = img.getAttribute('height') || img.clientHeight || 200;
+          img.src = `https://placehold.co/${width}x${height}/DEDEDE/555555?text=Image+Unavailable`;
+          img.alt = 'Image unavailable';
+          img.classList.remove('opacity-0');
+          img.classList.add('opacity-100', 'error-image');
+        };
+
+        if (img.dataset.src) {
+          imageObserver.observe(img);
+        } else {
+          img.classList.remove('opacity-0');
+          img.classList.add('opacity-100');
+        }
+      };
+
+      document.querySelectorAll('img[data-src], img:not([data-src])').forEach(loadImage);
+
+      // Watch for dynamically added images
+      new MutationObserver((mutations) => {
+        mutations.forEach(mutation => {
+          mutation.addedNodes.forEach(node => {
+            if (node.nodeType === 1) {
+              if (node.tagName === 'IMG') {
+                loadImage(node);
+              }
+              node.querySelectorAll('img').forEach(loadImage);
+            }
+          });
+        });
+      }).observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    });
+
+    // Performance monitoring
+    if ('performance' in window && 'PerformanceObserver' in window) {
+      // Create performance observer
+      const observer = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        entries.forEach((entry) => {
+          if (entry.entryType === 'largest-contentful-paint') {
+            // console.log(`LCP: ${entry.startTime}ms`);
+          }
+          if (entry.entryType === 'first-input') {
+            // console.log(`FID: ${entry.processingStart - entry.startTime}ms`);
+          }
+          if (entry.entryType === 'layout-shift') {
+            // console.log(`CLS: ${entry.value}`);
+          }
+        });
+      });
+
+      // Observe performance metrics
+      observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+
+      // Log basic performance metrics
+      window.addEventListener('load', () => {
+        const timing = performance.getEntriesByType('navigation')[0];
+        console.log({
+          'DNS Lookup': timing.domainLookupEnd - timing.domainLookupStart,
+          'TCP Connection': timing.connectEnd - timing.connectStart,
+          'DOM Content Loaded': timing.domContentLoadedEventEnd - timing.navigationStart,
+          'Page Load': timing.loadEventEnd - timing.navigationStart
+        });
+      });
+    }
+
+    // Handle offline/online status
+    window.addEventListener('online', () => {
+      document.body.classList.remove('offline');
+      console.log('Connection restored');
+    });
+
+    window.addEventListener('offline', () => {
+      document.body.classList.add('offline');
+      console.log('Connection lost');
+    });
+  </script>
+  <style>
+    *,
+    ::before,
+    ::after {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia: ;
+      --tw-contain-size: ;
+      --tw-contain-layout: ;
+      --tw-contain-paint: ;
+      --tw-contain-style:
+    }
+
+    ::backdrop {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia: ;
+      --tw-contain-size: ;
+      --tw-contain-layout: ;
+      --tw-contain-paint: ;
+      --tw-contain-style:
+    }
+
+    /* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */
+    *,
+    ::after,
+    ::before {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: #e5e7eb
+    }
+
+    ::after,
+    ::before {
+      --tw-content: ''
+    }
+
+    :host,
+    html {
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -moz-tab-size: 4;
+      tab-size: 4;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    body {
+      margin: 0;
+      line-height: inherit
+    }
+
+    hr {
+      height: 0;
+      color: inherit;
+      border-top-width: 1px
+    }
+
+    abbr:where([title]) {
+      -webkit-text-decoration: underline dotted;
+      text-decoration: underline dotted
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: inherit
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit
+    }
+
+    b,
+    strong {
+      font-weight: bolder
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      font-size: 1em
+    }
+
+    small {
+      font-size: 80%
+    }
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline
+    }
+
+    sub {
+      bottom: -.25em
+    }
+
+    sup {
+      top: -.5em
+    }
+
+    table {
+      text-indent: 0;
+      border-color: inherit;
+      border-collapse: collapse
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-feature-settings: inherit;
+      font-variation-settings: inherit;
+      font-size: 100%;
+      font-weight: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+      color: inherit;
+      margin: 0;
+      padding: 0
+    }
+
+    button,
+    select {
+      text-transform: none
+    }
+
+    button,
+    input:where([type=button]),
+    input:where([type=reset]),
+    input:where([type=submit]) {
+      appearance: button;
+      -webkit-appearance: button;
+      background-color: transparent;
+      background-image: none
+    }
+
+    :-moz-focusring {
+      outline: auto
+    }
+
+    :-moz-ui-invalid {
+      box-shadow: none
+    }
+
+    progress {
+      vertical-align: baseline
+    }
+
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      height: auto
+    }
+
+    [type=search] {
+      appearance: textfield;
+      -webkit-appearance: textfield;
+      outline-offset: -2px
+    }
+
+    ::-webkit-search-decoration {
+      -webkit-appearance: none
+    }
+
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      font: inherit
+    }
+
+    summary {
+      display: list-item
+    }
+
+    blockquote,
+    dd,
+    dl,
+    figure,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    p,
+    pre {
+      margin: 0
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0
+    }
+
+    legend {
+      padding: 0
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+
+    dialog {
+      padding: 0
+    }
+
+    textarea {
+      resize: vertical
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      opacity: 1;
+      color: #9ca3af
+    }
+
+    [role=button],
+    button {
+      cursor: pointer
+    }
+
+    :disabled {
+      cursor: default
+    }
+
+    audio,
+    canvas,
+    embed,
+    iframe,
+    img,
+    object,
+    svg,
+    video {
+      display: block;
+      vertical-align: middle
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto
+    }
+
+    [hidden]:where(:not([hidden=until-found])) {
+      display: none
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0
+    }
+
+    .fixed {
+      position: fixed
+    }
+
+    .absolute {
+      position: absolute
+    }
+
+    .relative {
+      position: relative
+    }
+
+    .top-0 {
+      top: 0px
+    }
+
+    .bottom-10 {
+      bottom: 2.5rem
+    }
+
+    .left-1\/2 {
+      left: 50%
+    }
+
+    .z-50 {
+      z-index: 50
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .mb-2 {
+      margin-bottom: 0.5rem
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem
+    }
+
+    .mb-3 {
+      margin-bottom: 0.75rem
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem
+    }
+
+    .mb-12 {
+      margin-bottom: 3rem
+    }
+
+    .mb-6 {
+      margin-bottom: 1.5rem
+    }
+
+    .mt-12 {
+      margin-top: 3rem
+    }
+
+    .mr-2 {
+      margin-right: 0.5rem
+    }
+
+    .mt-8 {
+      margin-top: 2rem
+    }
+
+    .ml-2 {
+      margin-left: 0.5rem
+    }
+
+    .mt-2 {
+      margin-top: 0.5rem
+    }
+
+    .mb-1 {
+      margin-bottom: 0.25rem
+    }
+
+    .block {
+      display: block
+    }
+
+    .flex {
+      display: flex
+    }
+
+    .inline-flex {
+      display: inline-flex
+    }
+
+    .grid {
+      display: grid
+    }
+
+    .hidden {
+      display: none
+    }
+
+    .h-16 {
+      height: 4rem
+    }
+
+    .h-5 {
+      height: 1.25rem
+    }
+
+    .h-6 {
+      height: 1.5rem
+    }
+
+    .h-4 {
+      height: 1rem
+    }
+
+    .h-2 {
+      height: 0.5rem
+    }
+
+    .h-full {
+      height: 100%
+    }
+
+    .min-h-screen {
+      min-height: 100vh
+    }
+
+    .min-h-\[70vh\] {
+      min-height: 70vh
+    }
+
+    .w-5 {
+      width: 1.25rem
+    }
+
+    .w-6 {
+      width: 1.5rem
+    }
+
+    .w-full {
+      width: 100%
+    }
+
+    .w-4 {
+      width: 1rem
+    }
+
+    .w-32 {
+      width: 8rem
+    }
+
+    .w-\[80\%\] {
+      width: 80%
+    }
+
+    .w-\[85\%\] {
+      width: 85%
+    }
+
+    .w-\[90\%\] {
+      width: 90%
+    }
+
+    .w-2 {
+      width: 0.5rem
+    }
+
+    .max-w-5xl {
+      max-width: 64rem
+    }
+
+    .max-w-3xl {
+      max-width: 48rem
+    }
+
+    .flex-1 {
+      flex: 1 1 0%
+    }
+
+    .-translate-x-1\/2 {
+      --tw-translate-x: -50%;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    .transform {
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    .list-inside {
+      list-style-position: inside
+    }
+
+    .list-disc {
+      list-style-type: disc
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr))
+    }
+
+    .flex-col {
+      flex-direction: column
+    }
+
+    .flex-wrap {
+      flex-wrap: wrap
+    }
+
+    .items-start {
+      align-items: flex-start
+    }
+
+    .items-center {
+      align-items: center
+    }
+
+    .justify-center {
+      justify-content: center
+    }
+
+    .justify-between {
+      justify-content: space-between
+    }
+
+    .gap-3 {
+      gap: 0.75rem
+    }
+
+    .gap-2 {
+      gap: 0.5rem
+    }
+
+    .gap-4 {
+      gap: 1rem
+    }
+
+    .gap-8 {
+      gap: 2rem
+    }
+
+    .gap-6 {
+      gap: 1.5rem
+    }
+
+    .space-x-8> :not([hidden])~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(2rem * var(--tw-space-x-reverse));
+      margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)))
+    }
+
+    .space-y-1> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.25rem * var(--tw-space-y-reverse))
+    }
+
+    .space-x-4> :not([hidden])~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(1rem * var(--tw-space-x-reverse));
+      margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)))
+    }
+
+    .space-y-6> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+    }
+
+    .space-y-12> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(3rem * var(--tw-space-y-reverse))
+    }
+
+    .space-y-2> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
+    }
+
+    .space-y-8> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(2rem * var(--tw-space-y-reverse))
+    }
+
+    .space-y-4> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(1rem * var(--tw-space-y-reverse))
+    }
+
+    .space-x-3> :not([hidden])~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+      margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))
+    }
+
+    .space-x-6> :not([hidden])~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+      margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))
+    }
+
+    .overflow-hidden {
+      overflow: hidden
+    }
+
+    .scroll-smooth {
+      scroll-behavior: smooth
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem
+    }
+
+    .rounded-md {
+      border-radius: 0.375rem
+    }
+
+    .rounded-full {
+      border-radius: 9999px
+    }
+
+    .rounded {
+      border-radius: 0.25rem
+    }
+
+    .border {
+      border-width: 1px
+    }
+
+    .border-t {
+      border-top-width: 1px
+    }
+
+    .border-neutral-700 {
+      --tw-border-opacity: 1;
+      border-color: rgb(64 64 64 / var(--tw-border-opacity, 1))
+    }
+
+    .border-neutral-200 {
+      --tw-border-opacity: 1;
+      border-color: rgb(229 229 229 / var(--tw-border-opacity, 1))
+    }
+
+    .bg-neutral-50 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(250 250 250 / var(--tw-bg-opacity, 1))
+    }
+
+    .bg-white {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+    }
+
+    .bg-neutral-800 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1))
+    }
+
+    .bg-neutral-800\/50 {
+      background-color: rgb(38 38 38 / 0.5)
+    }
+
+    .bg-neutral-900 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(23 23 23 / var(--tw-bg-opacity, 1))
+    }
+
+    .bg-neutral-100 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(245 245 245 / var(--tw-bg-opacity, 1))
+    }
+
+    .bg-neutral-200 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(229 229 229 / var(--tw-bg-opacity, 1))
+    }
+
+    .bg-neutral-400 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(163 163 163 / var(--tw-bg-opacity, 1))
+    }
+
+    .bg-neutral-700 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1))
+    }
+
+    .bg-neutral-600 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
+    }
+
+    .p-2 {
+      padding: 0.5rem
+    }
+
+    .p-6 {
+      padding: 1.5rem
+    }
+
+    .px-2 {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem
+    }
+
+    .px-3 {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem
+    }
+
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem
+    }
+
+    .py-20 {
+      padding-top: 5rem;
+      padding-bottom: 5rem
+    }
+
+    .py-1 {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem
+    }
+
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem
+    }
+
+    .py-12 {
+      padding-top: 3rem;
+      padding-bottom: 3rem
+    }
+
+    .pb-3 {
+      padding-bottom: 0.75rem
+    }
+
+    .pt-2 {
+      padding-top: 0.5rem
+    }
+
+    .pt-8 {
+      padding-top: 2rem
+    }
+
+    .text-left {
+      text-align: left
+    }
+
+    .text-center {
+      text-align: center
+    }
+
+    .font-mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+    }
+
+    .text-base {
+      font-size: 1rem;
+      line-height: 1.5rem
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem
+    }
+
+    .text-4xl {
+      font-size: 2.25rem;
+      line-height: 2.5rem
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem
+    }
+
+    .font-semibold {
+      font-weight: 600
+    }
+
+    .font-bold {
+      font-weight: 700
+    }
+
+    .leading-relaxed {
+      line-height: 1.625
+    }
+
+    .text-gray-800 {
+      --tw-text-opacity: 1;
+      color: rgb(31 41 55 / var(--tw-text-opacity, 1))
+    }
+
+    .text-neutral-600 {
+      --tw-text-opacity: 1;
+      color: rgb(82 82 82 / var(--tw-text-opacity, 1))
+    }
+
+    .text-neutral-300 {
+      --tw-text-opacity: 1;
+      color: rgb(212 212 212 / var(--tw-text-opacity, 1))
+    }
+
+    .text-neutral-400 {
+      --tw-text-opacity: 1;
+      color: rgb(163 163 163 / var(--tw-text-opacity, 1))
+    }
+
+    .text-white {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+    }
+
+    .text-neutral-800 {
+      --tw-text-opacity: 1;
+      color: rgb(38 38 38 / var(--tw-text-opacity, 1))
+    }
+
+    .text-neutral-900 {
+      --tw-text-opacity: 1;
+      color: rgb(23 23 23 / var(--tw-text-opacity, 1))
+    }
+
+    .text-neutral-100 {
+      --tw-text-opacity: 1;
+      color: rgb(245 245 245 / var(--tw-text-opacity, 1))
+    }
+
+    .text-neutral-500 {
+      --tw-text-opacity: 1;
+      color: rgb(115 115 115 / var(--tw-text-opacity, 1))
+    }
+
+    .text-neutral-700 {
+      --tw-text-opacity: 1;
+      color: rgb(64 64 64 / var(--tw-text-opacity, 1))
+    }
+
+    .antialiased {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .shadow-sm {
+      --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+    }
+
+    .shadow-lg {
+      --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+    }
+
+    .backdrop-blur-sm {
+      --tw-backdrop-blur: blur(4px);
+      -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+      backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+    }
+
+    .transition-colors {
+      transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms
+    }
+
+    .transition-shadow {
+      transition-property: box-shadow;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms
+    }
+
+    .duration-300 {
+      transition-duration: 300ms
+    }
+
+    .hover\:border-neutral-600:hover {
+      --tw-border-opacity: 1;
+      border-color: rgb(82 82 82 / var(--tw-border-opacity, 1))
+    }
+
+    .hover\:bg-neutral-200:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(229 229 229 / var(--tw-bg-opacity, 1))
+    }
+
+    .hover\:bg-neutral-700:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1))
+    }
+
+    .hover\:bg-neutral-300:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(212 212 212 / var(--tw-bg-opacity, 1))
+    }
+
+    .hover\:bg-neutral-600:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
+    }
+
+    .hover\:text-neutral-900:hover {
+      --tw-text-opacity: 1;
+      color: rgb(23 23 23 / var(--tw-text-opacity, 1))
+    }
+
+    .hover\:text-neutral-800:hover {
+      --tw-text-opacity: 1;
+      color: rgb(38 38 38 / var(--tw-text-opacity, 1))
+    }
+
+    .hover\:text-neutral-100:hover {
+      --tw-text-opacity: 1;
+      color: rgb(245 245 245 / var(--tw-text-opacity, 1))
+    }
+
+    .hover\:shadow-md:hover {
+      --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+    }
+
+    .focus\:not-sr-only:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal
+    }
+
+    .focus\:absolute:focus {
+      position: absolute
+    }
+
+    .focus\:left-0:focus {
+      left: 0px
+    }
+
+    .focus\:top-0:focus {
+      top: 0px
+    }
+
+    .focus\:z-50:focus {
+      z-index: 50
+    }
+
+    .focus\:bg-white:focus {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+    }
+
+    .focus\:p-4:focus {
+      padding: 1rem
+    }
+
+    .focus\:text-black:focus {
+      --tw-text-opacity: 1;
+      color: rgb(0 0 0 / var(--tw-text-opacity, 1))
+    }
+
+    .focus\:outline-none:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px
+    }
+
+    .focus\:ring-2:focus {
+      --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+      --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+      box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+    }
+
+    .focus\:ring-neutral-400:focus {
+      --tw-ring-opacity: 1;
+      --tw-ring-color: rgb(163 163 163 / var(--tw-ring-opacity, 1))
+    }
+
+    @media (min-width: 768px) {
+      .md\:col-span-2 {
+        grid-column: span 2 / span 2
+      }
+
+      .md\:flex {
+        display: flex
+      }
+
+      .md\:hidden {
+        display: none
+      }
+
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .md\:flex-row {
+        flex-direction: row
+      }
+
+      .md\:items-center {
+        align-items: center
+      }
+
+      .md\:text-5xl {
+        font-size: 3rem;
+        line-height: 1
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .dark\:border-neutral-500 {
+        --tw-border-opacity: 1;
+        border-color: rgb(115 115 115 / var(--tw-border-opacity, 1))
+      }
+
+      .dark\:bg-gray-900 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+      }
+
+      .dark\:bg-neutral-900 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(23 23 23 / var(--tw-bg-opacity, 1))
+      }
+
+      .dark\:bg-neutral-700 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1))
+      }
+
+      .dark\:bg-neutral-800 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1))
+      }
+
+      .dark\:bg-neutral-600 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
+      }
+
+      .dark\:text-neutral-300 {
+        --tw-text-opacity: 1;
+        color: rgb(212 212 212 / var(--tw-text-opacity, 1))
+      }
+
+      .dark\:text-white {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+      }
+
+      .dark\:text-neutral-100 {
+        --tw-text-opacity: 1;
+        color: rgb(245 245 245 / var(--tw-text-opacity, 1))
+      }
+
+      .dark\:text-neutral-200 {
+        --tw-text-opacity: 1;
+        color: rgb(229 229 229 / var(--tw-text-opacity, 1))
+      }
+
+      .dark\:text-neutral-400 {
+        --tw-text-opacity: 1;
+        color: rgb(163 163 163 / var(--tw-text-opacity, 1))
+      }
+
+      .dark\:hover\:bg-neutral-800:hover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1))
+      }
+
+      .dark\:hover\:bg-neutral-600:hover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
+      }
+
+      .dark\:hover\:bg-neutral-500:hover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(115 115 115 / var(--tw-bg-opacity, 1))
+      }
+
+      .dark\:hover\:text-white:hover {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+      }
+
+      .dark\:hover\:text-neutral-100:hover {
+        --tw-text-opacity: 1;
+        color: rgb(245 245 245 / var(--tw-text-opacity, 1))
+      }
+
+      .dark\:focus\:ring-neutral-400:focus {
+        --tw-ring-opacity: 1;
+        --tw-ring-color: rgb(163 163 163 / var(--tw-ring-opacity, 1))
+      }
+    }
+  </style>
+  <style type="text/css" id="mytempCss">
+    ._8mqQwQ {
+      display: none;
+    }
+
+    ._1TWLMK.icF5zO {
+      opacity: 0.01;
+    }
+  </style>
 </head>
 
-<body>
-    <header>
-        <div class="logo">
-            <img src="img/logo.svg" alt="">
-        </div>
-        <button class="nav-toggle" aria-label="'toggle-navigation">
-            <span class="hamburger"></span>
-        </button>
+<body class="antialiased text-gray-800 min-h-screen flex flex-col">
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+    Skip to main content
+  </a>
 
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a href="#home" class="nav__link" id="my-link" data-text="Home">Home</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#services" class="nav__link" data-text="Services">My Services</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#about" class="nav__link" data-text="About">About me</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#work" class="nav__link" data-text="Work">My Work</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header class="relative z-50 bg-white dark:bg-gray-900">
+    <!-- Header content goes here -->
+  </header>
 
-    <!-- Introduction -->
-    <section class="intro" id="home">
-        <h1 class="section__title section__title--intro">
-            Hi, I am <strong>Himanshu Banerji</strong>
-        </h1>
-        <p class="section__subtitle section__subtitle--intro">
-            iOS DEVELOPER
-        </p>
-        <img src="img/profile.jpeg" alt="a picture of me smiling" class="intro__img">
-    </section>
+  <!-- Main content area -->
+  <main id="main-content" class="flex-1 relative ">
+    <!-- Content will be injected here -->
+  </main>
 
 
-    <!-- My services -->
-    <section class="my-services" id="services">
-        <h2 class="section__title section__title--services">What I do</h2>
-        <div class="services">
-            <div class="service">
-                <h3>iOS Development</h3>
-                <p>I am currently developing an app that integrates the Pomodoro technique with to-do lists to improve
-                    my time management skills. This app will allow me to input my schedule and receive notifications for
-                    scheduled work periods, while simultaneously initiating a Pomodoro timer to track the duration of
-                    each work session.</p>
-            </div> <!-- service -->
+  <htmlcode>
+    <div id="root">
+      <nav id="navbar" class="fixed w-full z-50 top-0 transition-colors duration-300 bg-neutral-50 dark:bg-neutral-900">
+        <div class="max-w-5xl mx-auto px-4">
+          <div class="flex items-center justify-between h-16">
+            <!-- Logo/Name -->
+            <a href="#" class="text-lg font-mono font-semibold dark:text-white">
+              &lt;himanshu_banerji&gt;
+            </a>
 
-            <div class="service">
-                <h3>Programming</h3>
-                <p>Taking part in coding contest and learning Data Structure and Algorithm to make better apps and
-                    websites.Currently part of coding clubs where I take codemeets and help in conduct code events.</p>
-            </div> <!-- service -->
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+              <a href="#hero"
+                class="text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white transition-colors font-mono">Home</a>
+              <a href="#experience"
+                class="text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white transition-colors font-mono">Experience</a>
+              <a href="#projects"
+                class="text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white transition-colors font-mono">Projects</a>
+              <a href="#blogs"
+                class="text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white transition-colors font-mono">Blogs</a>
+            </div>
 
-            <div class="service">
-                <h3>Web Development</h3>
-                <p>As my first domain,I have basic knowledge of html,css and javascript. Out of
-                    which I spent the most part working to develop responsive layouts ensuring that my websites look
-                    great across different devices and screen sizes,the pre-layout to which was done in figma and
-                    then implemented them in the web.</p>
-            </div> <!-- service -->
-        </div> <!-- services -->
+            <!-- Dark Mode Toggle -->
+            <!-- does work for now ; need to fix -->
+            <!-- <button id="darkModeToggle"
+              class="p-2 rounded-lg text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+            </button> -->
 
-        <a href="#work" class="btn">see my work</a>
-    </section>
-
-
-    <!-- About Me -->
-    <section class="about-me" id="about">
-        <h2 class="section__title section__title--about">Who I am</h2>
-        <p class="section__subtitle section__subtitle--about">Programmer & Application developer based out of
-            MIT,Manipal</p>
-
-        <div class="about-me__body">
-            <p>Hi everyone👋, I'm Himanshu a 20-year-old CSE Undergrad currently doing iOS Development to make a
-                pomodoro app which could notify me about my study and work time based on the schedule I enter.
-                Being an active learner ,I really love and have fun teaching the things I learnt as well.
-            </p>
-            <p>Apart from this I do beatboxing, play some games and read books in my free time.</p>
+            <!-- Mobile menu button -->
+            <button id="menuBtn"
+              class="md:hidden p-2 rounded-lg text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <img src="img/about-me-02.jpg" alt="me on a rock" class="about-me__img">
-    </section>
-
-
-    <!-- My Work -->
-    <section class="my-work" id="work">
-        <h2 class="section__title section__title--work">My Work</h2>
-        <p class="section__subtitle section__subtitle--work">A selection of my range of work</p>
-
-        <div class="portfolio">
-            <!-- Portfolio item 01 -->
-            <a href="#" class="portfolio__item">
-                <img src="img/app-01.jpg" alt="" class="portfolio__img">
-            </a>
-            <!-- Portfolio item 02 -->
-            <a href="#" class="portfolio__item">
-                <img src="img/app-02.jpg" alt="" class="portfolio__img">
-            </a>
-            <!-- Portfolio item 03 -->
-            <a href="#" class="portfolio__item">
-                <img src="img/app-03.jpg" alt="" class="portfolio__img">
-            </a>
-
-            <!-- Portfolio item 04 -->
-            <a href="#" class="portfolio__item">
-                <img src="img/app-04.jpg" alt="" class="portfolio__img">
-            </a>
-            <!-- Portfolio item 05 -->
-            <a href="#" class="portfolio__item">
-                <img src="img/app-05.jpg" alt="" class="portfolio__img">
-            </a>
-            <!-- Portfolio item 06 -->
-            <a href="#" class="portfolio__item">
-                <img src="img/app-03.jpg" alt="" class="portfolio__img">
-            </a>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-neutral-50 dark:bg-neutral-900">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#hero"
+              class="block px-3 py-2 rounded-md text-base font-mono text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors">Home</a>
+            <a href="#experience"
+              class="block px-3 py-2 rounded-md text-base font-mono text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors">Experience</a>
+            <a href="#projects"
+              class="block px-3 py-2 rounded-md text-base font-mono text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors">Projects</a>
+            <a href="#blogs"
+              class="block px-3 py-2 rounded-md text-base font-mono text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors">Blogs</a>
+          </div>
         </div>
-    </section>
+      </nav>
 
+      <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+          document.documentElement.classList.toggle('dark');
+          localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        });
 
-    <!-- Footer -->
-    <footer class="footer">
-        <a href="mailto:heman.ehv@gmail.com" class="footer__link">hbanerji@duck.com</a>
-        <ul class="social-list">
-            <li class="social-list__item">
-                <a class="social-list__link" href="https://github.com/himanshubanerji">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-            </li>
-            <li class="social-list__item"><a class="social-list__link"
-                    href="https://www.linkedin.com/in/himanshu-banerji-a7085521a/">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-            </li>
-            <li class="social-list__item">
-                <a class="social-list__link" href="https://twitter.com/himanshubanerji">
-                    <i class="fa-brands fa-twitter"></i>
-                </a>
-            </li>
-            <li class="social-list__item">
-                <a class="social-list__link" href="https://www.instagram.com/himanshu.banerji/">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-            </li>
-        </ul>
-    </footer>
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true' ||
+          (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
 
-    <script src="js/index.js"></script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
 
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      </script>
+    </div>
+  </htmlcode>
+  <htmlcode>
+    <div id="root">
+      <section id="hero"
+        class="min-h-[70vh] flex items-center justify-center bg-neutral-900 dark:bg-neutral-900 text-white font-mono">
+        <div class="max-w-3xl mx-auto px-4 text-center animate__animated animate__fadeIn">
+          <div class="space-y-6">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 animate__animated animate__fadeInDown">
+              hi, i am himanshu!
+            </h1>
+
+            <div class="bg-neutral-800/50 p-6 rounded-lg backdrop-blur-sm animate__animated animate__fadeInUp">
+              <p class="text-lg text-neutral-300 mb-4">
+                vim enthusiast focussing on building better software
+              </p>
+              <p class="text-neutral-400">
+                i mainly work in backend development </p>
+            </div>
+
+            <div class="flex justify-center space-x-4 pt-8 animate__animated animate__fadeInUp animate__delay-1s">
+              <!-- <a href="#experience" class="px-6 py-2 bg-neutral-800 hover:bg-neutral-700 rounded-lg transition-colors">
+                view my work
+              </a> -->
+              <a href="#contact"
+                class="px-6 py-2 border border-neutral-700 hover:border-neutral-600 rounded-lg transition-colors">
+                contact me
+              </a>
+            </div>
+
+            <div
+              class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate__animated animate__bounce animate__infinite">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Animate elements when they come into view
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate__animated', 'animate__fadeIn');
+            }
+          });
+        });
+
+        document.querySelectorAll('#hero > *').forEach((element) => {
+          observer.observe(element);
+        });
+      </script>
+    </div>
+  </htmlcode>
+  <htmlcode>
+    <div id="root">
+      <section id="about" class="py-20 bg-neutral-50 dark:bg-neutral-800">
+        <div class="max-w-3xl mx-auto px-4">
+          <div class="text-center space-y-12 animate__animated animate__fadeIn animate__fadeInUp">
+            <!-- About Heading -->
+            <h2 class="text-2xl font-mono font-bold text-neutral-800 dark:text-neutral-100 mb-8">
+              about me
+            </h2>
+
+            <!-- Main Content -->
+            <div class="space-y-6 text-left">
+              <!-- Skills & Focus -->
+              <!-- <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg shadow-sm animate__animated animate__fadeInUp">
+                <h3 class="text-lg font-mono text-neutral-900 dark:text-neutral-100 mb-3">
+                  tech stack
+                </h3>
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono leading-relaxed">
+                  go / c++ / java / python / system design
+                </p>
+              </div> -->
+
+              <!-- Background -->
+              <div
+                class="bg-white dark:bg-neutral-700 p-6 rounded-lg shadow-sm animate__animated animate__fadeInUp animate__delay-1s">
+                <h3 class="text-lg font-mono text-neutral-900 dark:text-neutral-100 mb-3">
+                  background
+                </h3>
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono leading-relaxed">
+                  cse undergrad from mit, manipal
+                </p>
+              </div>
+
+              <!-- Current Focus -->
+              <div
+                class="bg-white dark:bg-neutral-700 p-6 rounded-lg shadow-sm animate__animated animate__fadeInUp animate__delay-2s">
+                <h3 class="text-lg font-mono text-neutral-900 dark:text-neutral-100 mb-3">
+                  current focus
+                </h3>
+                <ul class="list-disc list-inside text-neutral-600 dark:text-neutral-300 font-mono space-y-2">
+                  <li>building backend systems with Go</li>
+                  <li>learning system design</li>
+                  <!-- <li>learning competitive programming algorithms</li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Intersection Observer for scroll animations
+        const aboutObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+              aboutObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        // Observe all animated elements in the about section
+        document.querySelectorAll('#about .animate__animated').forEach((el) => {
+          aboutObserver.observe(el);
+        });
+      </script>
+    </div>
+  </htmlcode>
+  <htmlcode>
+    <div id="root">
+      <section id="experience" class="py-20 bg-neutral-900 dark:bg-neutral-900">
+        <div class="max-w-3xl mx-auto px-4">
+          <h2
+            class="text-2xl font-mono font-bold text-neutral-100 text-center mb-12 animate__animated animate__fadeIn animate__fadeInUp">
+            experience
+          </h2>
+
+          <div class="space-y-8">
+            <!-- Experience Item 1 -->
+            <div
+              class="bg-neutral-800 p-6 rounded-lg shadow-lg hover:bg-neutral-700 transition-colors duration-300 animate__animated animate__fadeInUp">
+              <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                <h3 class="text-lg font-mono text-neutral-100">swe intern @ ordbit</h3>
+                <span class="text-sm font-mono text-neutral-400">Dec 2024 - Present</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-neutral-300 font-mono text-sm">
+                  • developed microservices to address business requirements & enhance system functionality
+                </p>
+                <p class="text-neutral-300 font-mono text-sm">
+                  • served as primary point of contact to resolve client issues
+                </p>
+              </div>
+            </div>
+
+            <!-- Experience Item 2 -->
+            <div
+              class="bg-neutral-800 p-6 rounded-lg shadow-lg hover:bg-neutral-700 transition-colors duration-300 animate__animated animate__fadeInUp animate__delay-1s">
+              <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                <h3 class="text-lg font-mono text-neutral-100">swe intern @ human insight ventures</h3>
+                <span class="text-sm font-mono text-neutral-400">2023</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-neutral-300 font-mono text-sm">
+                  • worked with team of 5 on kitaabnama, an online reading platform
+                </p>
+                <p class="text-neutral-300 font-mono text-sm">
+                  • redesigned ui & implemented core features for better reading experience
+                </p>
+              </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="mt-12 pt-8 border-t border-neutral-700 animate__animated animate__fadeInUp animate__delay-2s">
+              <h3 class="text-lg font-mono text-neutral-100 mb-6 text-center">technical skills used</h3>
+              <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">Go</span>
+                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">Gin</span>
+                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">Python</span>
+                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">Django</span>
+                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">PostgreSQL</span>
+                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">Docker</span>
+                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">AWS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Intersection Observer for scroll animations
+        const experienceObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+              experienceObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        // Observe all animated elements in the experience section
+        document.querySelectorAll('#experience .animate__animated').forEach((el) => {
+          experienceObserver.observe(el);
+        });
+      </script>
+    </div>
+  </htmlcode>
+  <htmlcode>
+    <div id="root">
+      <section id="projects" class="py-20 bg-neutral-50 dark:bg-neutral-800">
+        <div class="max-w-3xl mx-auto px-4">
+          <h2
+            class="text-2xl font-mono font-bold text-neutral-800 dark:text-neutral-100 text-center mb-12 animate__animated animate__fadeIn animate__fadeInUp">
+            projects
+          </h2>
+
+          <div class="space-y-8">
+            <!-- Serious Projects Section -->
+            <div class="space-y-6">
+              <h3 class="text-lg font-mono text-neutral-700 dark:text-neutral-200 mb-4">academic projects</h3>
+
+              <div class="grid gap-4">
+                <!-- Project 1 -->
+                <div
+                  class="bg-white dark:bg-neutral-700 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow animate__animated animate__fadeInUp">
+                  <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-neutral-800 dark:text-neutral-100 font-mono font-semibold">postit</h4>
+                    <span class="text-sm font-mono text-neutral-500 dark:text-neutral-400">2024</span>
+                  </div>
+                  <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm mb-3">
+                    web-based knowledge sharing platform for educational institutions
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="text-xs font-mono px-2 py-1 bg-neutral-100 dark:bg-neutral-600 text-neutral-600 dark:text-neutral-300 rounded">Python</span>
+                    <span
+                      class="text-xs font-mono px-2 py-1 bg-neutral-100 dark:bg-neutral-600 text-neutral-600 dark:text-neutral-300 rounded">Django</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fun Projects Section -->
+            <div class="space-y-6 pt-8">
+              <h3 class="text-lg font-mono text-neutral-700 dark:text-neutral-200 mb-4">personal projects</h3>
+
+              <div class="grid gap-4">
+                <!-- Project 1 -->
+                <div
+                  class="bg-white dark:bg-neutral-700 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow animate__animated animate__fadeInUp animate__delay-1s">
+                  <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-neutral-800 dark:text-neutral-100 font-mono font-semibold">planify</h4>
+                    <span class="text-sm font-mono text-neutral-500 dark:text-neutral-400">2023</span>
+                  </div>
+                  <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm mb-3">
+                    task planner for automatic timer generation based on events scheduled
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="text-xs font-mono px-2 py-1 bg-neutral-100 dark:bg-neutral-600 text-neutral-600 dark:text-neutral-300 rounded">Swift</span>
+                    <span
+                      class="text-xs font-mono px-2 py-1 bg-neutral-100 dark:bg-neutral-600 text-neutral-600 dark:text-neutral-300 rounded">Xcode</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- GitHub Stats -->
+            <div class="mt-12 text-center animate__animated animate__fadeInUp animate__delay-2s">
+              <a href="https://github.com/himanshubanerji" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center px-4 py-2 bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-600 transition-colors font-mono text-sm">
+                <span class="mr-2">view more on github</span>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Intersection Observer for scroll animations
+        const projectsObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+              projectsObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        // Observe all animated elements in the projects section
+        document.querySelectorAll('#projects .animate__animated').forEach((el) => {
+          projectsObserver.observe(el);
+        });
+      </script>
+    </div>
+  </htmlcode>
+  <htmlcode>
+    <div id="root">
+      <!-- <section id="skills" class="py-20 bg-neutral-900 dark:bg-neutral-900">
+        <div class="max-w-3xl mx-auto px-4">
+          <h2 class="text-2xl font-mono font-bold text-neutral-100 text-center mb-12 animate__animated animate__fadeIn">
+            skills
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-neutral-800 p-6 rounded-lg animate__animated animate__fadeInLeft">
+              <h3 class="text-lg font-mono text-neutral-100 mb-6">primary stack</h3>
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-neutral-300">Deep Learning</span>
+                  <div class="w-32 h-2 bg-neutral-700 rounded-full overflow-hidden">
+                    <div class="w-[90%] h-full bg-neutral-400"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-neutral-300">Python</span>
+                  <div class="w-32 h-2 bg-neutral-700 rounded-full overflow-hidden">
+                    <div class="w-[85%] h-full bg-neutral-400"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-neutral-300">NLP</span>
+                  <div class="w-32 h-2 bg-neutral-700 rounded-full overflow-hidden">
+                    <div class="w-[80%] h-full bg-neutral-400"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-neutral-800 p-6 rounded-lg animate__animated animate__fadeInRight">
+              <h3 class="text-lg font-mono text-neutral-100 mb-6">tools &amp; frameworks</h3>
+              <div class="flex flex-wrap gap-3">
+                <span class="px-3 py-1 bg-neutral-700 text-neutral-300 rounded-full text-sm font-mono">PyTorch</span>
+                <span class="px-3 py-1 bg-neutral-700 text-neutral-300 rounded-full text-sm font-mono">TensorFlow</span>
+                <span
+                  class="px-3 py-1 bg-neutral-700 text-neutral-300 rounded-full text-sm font-mono">scikit-learn</span>
+                <span class="px-3 py-1 bg-neutral-700 text-neutral-300 rounded-full text-sm font-mono">Git</span>
+                <span class="px-3 py-1 bg-neutral-700 text-neutral-300 rounded-full text-sm font-mono">Linux</span>
+                <span class="px-3 py-1 bg-neutral-700 text-neutral-300 rounded-full text-sm font-mono">Docker</span>
+              </div>
+            </div>
+
+            <div class="md:col-span-2 mt-8 bg-neutral-800 p-6 rounded-lg animate__animated animate__fadeInUp">
+              <h3 class="text-lg font-mono text-neutral-100 mb-6">currently learning</h3>
+              <div class="flex flex-wrap gap-3">
+                <span class="px-3 py-1 bg-neutral-700 text-neutral-300 rounded-full text-sm font-mono">Competitive
+                  Programming</span>
+                <span class="px-3 py-1 bg-neutral-700 text-neutral-300 rounded-full text-sm font-mono">Research Paper
+                  Writing</span>
+                <span class="px-3 py-1 bg-neutral-700 text-neutral-300 rounded-full text-sm font-mono">Advanced
+                  Algorithms</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <script>
+        // Intersection Observer for scroll animations
+        const skillsObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate__animated');
+              skillsObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        // Observe all animated elements in the skills section
+        document.querySelectorAll('#skills .animate__animated').forEach((el) => {
+          skillsObserver.observe(el);
+        });
+      </script>
+    </div>
+  </htmlcode>
+  <htmlcode>
+    <div id="root">
+      <section id="blogs" class="py-20 bg-neutral-900 dark:bg-neutral-900">
+        <div class="max-w-3xl mx-auto px-4">
+          <h2
+            class="text-2xl font-mono font-bold text-neutral-800 dark:text-neutral-100 text-center mb-12 animate__animated animate__fadeIn">
+            blogs
+          </h2>
+
+          <div class="space-y-8">
+            <!-- Technical Blogs -->
+            <div class="space-y-6">
+              <h3 class="text-lg font-mono text-neutral-700 dark:text-neutral-200">technical blogs</h3>
+              <div class="grid gap-6">
+                <a href="#"
+                  class="block bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow animate__animated animate__fadeInUp">
+                  <span class="text-sm font-mono text-neutral-500 dark:text-neutral-400">Dec 15, 2024</span>
+                  <h4 class="text-neutral-800 dark:text-neutral-100 font-mono font-semibold mt-2">understanding the unix
+                    philosophy</h4>
+                  <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm mt-2">set of cultural norms &
+                    philosophical approaches to minimalist, modular software development</p>
+                </a>
+              </div>
+            </div>
+
+            <!-- Guides -->
+            <div class="space-y-6">
+              <h3 class="text-lg font-mono text-neutral-700 dark:text-neutral-200">guides</h3>
+              <div class="grid gap-6">
+                <a href="#"
+                  class="block bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow animate__animated animate__fadeInUp animate__delay-1s">
+                  <span class="text-sm font-mono text-neutral-500 dark:text-neutral-400">Nov 30, 2023</span>
+                  <h4 class="text-neutral-800 dark:text-neutral-100 font-mono font-semibold mt-2">basics to neovim</h4>
+                  <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm mt-2">a beginner's guide for the
+                    barebone neovim config</p>
+                </a>
+              </div>
+            </div>
+
+            <!-- CP Algorithms -->
+            <div class="space-y-6">
+              <h3 class="text-lg font-mono text-neutral-700 dark:text-neutral-200">things i'm learning</h3>
+              <div class="grid gap-6">
+                <a href="#"
+                  class="block bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow animate__animated animate__fadeInUp animate__delay-2s">
+                  <span class="text-sm font-mono text-neutral-500 dark:text-neutral-400">current focus</span>
+                  <h4 class="text-neutral-800 dark:text-neutral-100 font-mono font-semibold mt-2">understanding more
+                    about system architechture</h4>
+                  <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm mt-2"></p>
+                </a>
+              </div>
+            </div>
+
+            <!-- More Posts Link -->
+            <!-- <div class="text-center pt-8 animate__animated animate__fadeInUp animate__delay-3s">
+              <a href="#"
+                class="inline-flex items-center px-6 py-3 bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-lg hover:bg-neutral-300 dark:hover:bg-neutral-600 transition-colors font-mono text-sm">
+                view all posts
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                  </path>
+                </svg>
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Intersection Observer for scroll animations
+        const blogsObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate__animated');
+              blogsObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        // Observe all animated elements in the blogs section
+        document.querySelectorAll('#blogs .animate__animated').forEach((el) => {
+          blogsObserver.observe(el);
+        });
+      </script>
+    </div>
+  </htmlcode>
+  <htmlcode>
+    <div id="root">
+
+      <script>
+        // Intersection Observer for scroll animations
+        const researchObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate__animated');
+              researchObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        // Observe all animated elements in the research section
+        document.querySelectorAll('#research .animate__animated').forEach((el) => {
+          researchObserver.observe(el);
+        });
+      </script>
+    </div>
+  </htmlcode>
+  <htmlcode>
+    <div id="root">
+      <section id="contact" class="py-20 bg-neutral-50 dark:bg-neutral-800">
+        <div class="max-w-3xl mx-auto px-4">
+          <h2
+            class="text-2xl font-mono font-bold text-neutral-800 dark:text-neutral-100 text-center mb-12 animate__animated animate__fadeIn">
+            let's connect
+          </h2>
+
+          <div class="grid gap-8 md:grid-cols-2">
+            <!-- Contact Form -->
+            <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg shadow-sm animate__animated animate__fadeInLeft">
+              <form id="contactForm" class="space-y-4" method="POST">
+                <input type="hidden" name="access_key" value="5589cace-ca92-4b73-8878-5e811ae42df4">
+                <div>
+                  <label for="name"
+                    class="block text-sm font-mono text-neutral-600 dark:text-neutral-300 mb-1">name</label>
+                  <input type="text" id="name" name="name" required=""
+                    class="w-full px-4 py-2 bg-neutral-100 dark:bg-neutral-600 border border-neutral-200 dark:border-neutral-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:focus:ring-neutral-400 text-neutral-800 dark:text-neutral-100 font-mono">
+                </div>
+
+                <div>
+                  <label for="email"
+                    class="block text-sm font-mono text-neutral-600 dark:text-neutral-300 mb-1">email</label>
+                  <input type="email" id="email" name="email" required=""
+                    class="w-full px-4 py-2 bg-neutral-100 dark:bg-neutral-600 border border-neutral-200 dark:border-neutral-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:focus:ring-neutral-400 text-neutral-800 dark:text-neutral-100 font-mono">
+                </div>
+
+                <div>
+                  <label for="message"
+                    class="block text-sm font-mono text-neutral-600 dark:text-neutral-300 mb-1">message</label>
+                  <textarea id="message" name="message" rows="4" required=""
+                    class="w-full px-4 py-2 bg-neutral-100 dark:bg-neutral-600 border border-neutral-200 dark:border-neutral-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:focus:ring-neutral-400 text-neutral-800 dark:text-neutral-100 font-mono"></textarea>
+                </div>
+
+                <button type="submit"
+                  class="w-full px-6 py-3 bg-neutral-800 dark:bg-neutral-600 hover:bg-neutral-700 dark:hover:bg-neutral-500 text-white rounded-lg transition-colors font-mono text-sm">
+                  send message
+                </button>
+                <div id="result"></div>
+              </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="space-y-8 animate__animated animate__fadeInRight">
+              <div class="bg-white dark:bg-neutral-700 p-6 rounded-lg shadow-sm">
+                <h3 class="text-lg font-mono text-neutral-800 dark:text-neutral-100 mb-4">other ways to reach me</h3>
+
+                <div class="space-y-4">
+                  <!-- <a href="mailto:heman.ehv@gmail.com"
+                    class="flex items-center space-x-3 text-neutral-600 dark:text-neutral-300 hover:text-neutral-800 dark:hover:text-neutral-100 transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
+                    <span class="font-mono text-sm">mail</span>
+                  </a> -->
+
+                  <a href="https://github.com/himanshubanerji" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center space-x-3 text-neutral-600 dark:text-neutral-300 hover:text-neutral-800 dark:hover:text-neutral-100 transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z">
+                      </path>
+                    </svg>
+                    <span class="font-mono text-sm">github/himanshubanerji</span>
+                  </a>
+
+                  <a href="https://x.com/himanshubanerji" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center space-x-3 text-neutral-600 dark:text-neutral-300 hover:text-neutral-800 dark:hover:text-neutral-100 transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+                      </path>
+                    </svg>
+                    <span class="font-mono text-sm">@himanshubanerji</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        // Form submission handler
+        const result = document.getElementById('result');
+        const form = document.getElementById('contactForm');
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+          e.preventDefault();
+          // logic for email
+          const formData = new FormData(form);
+          const object = Object.fromEntries(formData);
+          const json = JSON.stringify(object);
+          result.innerHTML = "<span class='block text-sm font-mono text-neutral-600 dark:text-neutral-300 mb-1'>please wait...</span>";
+
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: json
+          })
+            .then(async (response) => {
+              let json = await response.json();
+              if (response.status == 200) {
+                result.innerHTML = "<span class='block text-sm font-mono text-neutral-600 dark:text-neutral-300 mb-1'>form submitted successfully!</span>";
+              } else {
+                console.log(response);
+                result.innerHTML = json.message;
+              }
+            })
+            .catch(error => {
+              console.log(error);
+              result.innerHTML = "<span class='block text-sm font-mono text-neutral-600 dark:text-neutral-300 mb-1'>Something went wrong!</span>";
+            })
+            .then(function () {
+              form.reset();
+              setTimeout(() => {
+                result.style.display = "none";
+              }, 3000);
+            });
+          // console.log('Form submitted');
+        });
+
+        // Intersection Observer for scroll animations
+        const contactObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate__animated');
+              contactObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        // Observe all animated elements in the contact section
+        document.querySelectorAll('#contact .animate__animated').forEach((el) => {
+          contactObserver.observe(el);
+        });
+      </script>
+    </div>
+  </htmlcode>
+  <htmlcode>
+    <div id="root">
+      <footer id="footer" class="bg-neutral-900 dark:bg-neutral-900 text-neutral-400 py-12">
+        <div class="max-w-3xl mx-auto px-4">
+          <div class="flex flex-col items-center space-y-8">
+            <!-- Logo/Name -->
+            <!-- <div class="text-2xl font-mono font-bold text-neutral-100 animate__animated animate__fadeIn">
+              himanshu
+            </div> -->
+
+            <!-- Social Links -->
+            <!-- <div class="flex space-x-6 animate__animated animate__fadeIn animate__delay-1s">
+              <a href="https://github.com/himanshubanerji" target="_blank" rel="noopener noreferrer"
+                class="text-neutral-400 hover:text-neutral-100 transition-colors">
+                <span class="sr-only">GitHub</span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z">
+                  </path>
+                </svg>
+              </a>
+              <a href="https://twitter.com/himanshubanerji" target="_blank" rel="noopener noreferrer"
+                class="text-neutral-400 hover:text-neutral-100 transition-colors">
+                <span class="sr-only">Twitter</span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+                  </path>
+                </svg>
+              </a>
+            </div> -->
+
+            <!-- Navigation Links -->
+            <!-- <nav
+              class="flex flex-wrap justify-center gap-6 text-sm font-mono animate__animated animate__fadeIn animate__delay-2s">
+              <a href="#hero" class="text-neutral-400 hover:text-neutral-100 transition-colors">home</a>
+              <a href="#experience" class="text-neutral-400 hover:text-neutral-100 transition-colors">experience</a>
+              <a href="#projects" class="text-neutral-400 hover:text-neutral-100 transition-colors">projects</a>
+              <a href="#blogs" class="text-neutral-400 hover:text-neutral-100 transition-colors">blogs</a>
+              <a href="#research" class="text-neutral-400 hover:text-neutral-100 transition-colors">research</a>
+              <a href="#contact" class="text-neutral-400 hover:text-neutral-100 transition-colors">contact</a>
+            </nav> -->
+
+            <!-- Copyright -->
+            <div
+              class="text-center text-sm font-mono text-neutral-500 animate__animated animate__fadeIn animate__delay-3s">
+              <p>:wq</p>
+              <p>© 2025 made by himanshu</p>
+              <p>all rights reserved</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+            });
+          });
+        });
+
+        // Intersection Observer for footer animations
+        const footerObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate__animated');
+              footerObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        // Observe all animated elements in the footer
+        document.querySelectorAll('#footer .animate__animated').forEach((el) => {
+          footerObserver.observe(el);
+        });
+      </script>
+    </div>
+  </htmlcode><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev"
+    style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;">
+    <defs id="SvgjsDefs1002"></defs>
+    <polyline id="SvgjsPolyline1003" points="0,0"></polyline>
+    <path id="SvgjsPath1004" d="M0 0 "></path>
+  </svg>
 </body>
 
 </html>
