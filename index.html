@@ -180,6 +180,16 @@
 
   <!-- Base Styles -->
   <style>
+    /* Entrance animations start offset horizontally (fadeInLeft / fadeInRight sit at
+       translateX(±2rem) while paused). Without this, that offset widens the document
+       past the viewport on narrow screens, and every centered section then centers on
+       the wider canvas — which crops the hero heading off the right edge on phones. */
+    html,
+    body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
     * {
       -ms-overflow-style: none;
       /* IE and Edge */
@@ -1699,8 +1709,11 @@
   </htmlcode>
   <htmlcode>
     <div id="root">
+      <!-- pt-16 reserves the height of the fixed navbar (h-16). Without it the hero
+           centres against the full viewport and, on short screens where the content
+           outgrows 70vh, the heading slides up underneath the nav. -->
       <section id="hero"
-        class="min-h-[70vh] flex items-center justify-center bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white font-mono transition-colors duration-300">
+        class="min-h-[70vh] pt-16 flex items-center justify-center bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white font-mono transition-colors duration-300">
         <div class="max-w-3xl mx-auto px-4 text-center animate__animated animate__fadeIn">
           <div class="space-y-6">
             <h1 class="text-4xl md:text-5xl font-bold mb-2 animate__animated animate__fadeInDown">
