@@ -20,6 +20,9 @@
   <script src="js/preload_resources.js"></script>
   <script>
     tailwind.config = {
+      // 'class' = dark mode follows the .dark class on <html>, which #darkModeToggle
+      // flips. Without this Tailwind defaults to 'media' and the toggle does nothing.
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -146,6 +149,18 @@
     }
   </script>
 
+  <!-- Theme bootstrap: runs before first paint so the page never flashes the wrong theme.
+       Must stay inline and blocking; the toggle handler itself lives with the navbar. -->
+  <script>
+      (function () {
+        var saved = localStorage.getItem('darkMode');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'true' || (saved === null && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+  </script>
+
   <!-- Utilities and Components -->
   <script defer="" src="js/cdn.min.js"></script>
   <script defer="" src="js/apexcharts.min.js"></script>
@@ -154,6 +169,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
   <link href="css/css2.css" rel="stylesheet">
+
+  <!-- Scroll-triggered animations -->
+  <link href="css/animate.css" rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet" href="css/all.min.css"
@@ -1447,91 +1465,90 @@
       }
     }
 
-    @media (prefers-color-scheme: dark) {
-      .dark\:border-neutral-500 {
-        --tw-border-opacity: 1;
-        border-color: rgb(115 115 115 / var(--tw-border-opacity, 1))
-      }
+    /* Dark mode: class-based (toggled by #darkModeToggle), not OS-based */
+    .dark .dark\:border-neutral-500 {
+      --tw-border-opacity: 1;
+      border-color: rgb(115 115 115 / var(--tw-border-opacity, 1))
+    }
 
-      .dark\:bg-gray-900 {
-        --tw-bg-opacity: 1;
-        background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
-      }
+    .dark .dark\:bg-gray-900 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+    }
 
-      .dark\:bg-neutral-900 {
-        --tw-bg-opacity: 1;
-        background-color: rgb(23 23 23 / var(--tw-bg-opacity, 1))
-      }
+    .dark .dark\:bg-neutral-900 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(23 23 23 / var(--tw-bg-opacity, 1))
+    }
 
-      .dark\:bg-neutral-700 {
-        --tw-bg-opacity: 1;
-        background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1))
-      }
+    .dark .dark\:bg-neutral-700 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1))
+    }
 
-      .dark\:bg-neutral-800 {
-        --tw-bg-opacity: 1;
-        background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1))
-      }
+    .dark .dark\:bg-neutral-800 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1))
+    }
 
-      .dark\:bg-neutral-600 {
-        --tw-bg-opacity: 1;
-        background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
-      }
+    .dark .dark\:bg-neutral-600 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
+    }
 
-      .dark\:text-neutral-300 {
-        --tw-text-opacity: 1;
-        color: rgb(212 212 212 / var(--tw-text-opacity, 1))
-      }
+    .dark .dark\:text-neutral-300 {
+      --tw-text-opacity: 1;
+      color: rgb(212 212 212 / var(--tw-text-opacity, 1))
+    }
 
-      .dark\:text-white {
-        --tw-text-opacity: 1;
-        color: rgb(255 255 255 / var(--tw-text-opacity, 1))
-      }
+    .dark .dark\:text-white {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+    }
 
-      .dark\:text-neutral-100 {
-        --tw-text-opacity: 1;
-        color: rgb(245 245 245 / var(--tw-text-opacity, 1))
-      }
+    .dark .dark\:text-neutral-100 {
+      --tw-text-opacity: 1;
+      color: rgb(245 245 245 / var(--tw-text-opacity, 1))
+    }
 
-      .dark\:text-neutral-200 {
-        --tw-text-opacity: 1;
-        color: rgb(229 229 229 / var(--tw-text-opacity, 1))
-      }
+    .dark .dark\:text-neutral-200 {
+      --tw-text-opacity: 1;
+      color: rgb(229 229 229 / var(--tw-text-opacity, 1))
+    }
 
-      .dark\:text-neutral-400 {
-        --tw-text-opacity: 1;
-        color: rgb(163 163 163 / var(--tw-text-opacity, 1))
-      }
+    .dark .dark\:text-neutral-400 {
+      --tw-text-opacity: 1;
+      color: rgb(163 163 163 / var(--tw-text-opacity, 1))
+    }
 
-      .dark\:hover\:bg-neutral-800:hover {
-        --tw-bg-opacity: 1;
-        background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1))
-      }
+    .dark .dark\:hover\:bg-neutral-800:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1))
+    }
 
-      .dark\:hover\:bg-neutral-600:hover {
-        --tw-bg-opacity: 1;
-        background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
-      }
+    .dark .dark\:hover\:bg-neutral-600:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(82 82 82 / var(--tw-bg-opacity, 1))
+    }
 
-      .dark\:hover\:bg-neutral-500:hover {
-        --tw-bg-opacity: 1;
-        background-color: rgb(115 115 115 / var(--tw-bg-opacity, 1))
-      }
+    .dark .dark\:hover\:bg-neutral-500:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(115 115 115 / var(--tw-bg-opacity, 1))
+    }
 
-      .dark\:hover\:text-white:hover {
-        --tw-text-opacity: 1;
-        color: rgb(255 255 255 / var(--tw-text-opacity, 1))
-      }
+    .dark .dark\:hover\:text-white:hover {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+    }
 
-      .dark\:hover\:text-neutral-100:hover {
-        --tw-text-opacity: 1;
-        color: rgb(245 245 245 / var(--tw-text-opacity, 1))
-      }
+    .dark .dark\:hover\:text-neutral-100:hover {
+      --tw-text-opacity: 1;
+      color: rgb(245 245 245 / var(--tw-text-opacity, 1))
+    }
 
-      .dark\:focus\:ring-neutral-400:focus {
-        --tw-ring-opacity: 1;
-        --tw-ring-color: rgb(163 163 163 / var(--tw-ring-opacity, 1))
-      }
+    .dark .dark\:focus\:ring-neutral-400:focus {
+      --tw-ring-opacity: 1;
+      --tw-ring-color: rgb(163 163 163 / var(--tw-ring-opacity, 1))
     }
   </style>
   <style type="text/css" id="mytempCss">
@@ -1545,7 +1562,8 @@
   </style>
 </head>
 
-<body class="antialiased text-gray-800 min-h-screen flex flex-col">
+<body
+  class="antialiased bg-neutral-50 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200 min-h-screen flex flex-col transition-colors duration-300">
   <!-- Skip to main content link for accessibility -->
   <a href="#main-content"
     class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
@@ -1585,13 +1603,37 @@
                 class="text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white transition-colors font-mono">Blogs</a>
             </div>
 
-            <!-- Dark Mode Toggle -->
-            <!-- does work for now ; need to fix -->
-            <button id="darkModeToggle"
-              class="p-2 rounded-lg text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <!-- Dark Mode Toggle.
+                 Knob position and icon visibility are driven by `dark:` variants, not JS,
+                 so the switch is already in the right position on the first paint. -->
+            <button id="darkModeToggle" type="button" role="switch" aria-checked="false" aria-label="Toggle dark mode"
+              class="relative inline-flex h-7 w-14 flex-shrink-0 items-center rounded-full bg-neutral-200 dark:bg-neutral-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:focus:ring-neutral-400">
+              <!-- Both destinations stay visible on the track, so the switch reads as a slider. -->
+              <svg class="pointer-events-none absolute left-1.5 h-4 w-4 text-neutral-500 dark:text-neutral-400"
+                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <svg class="pointer-events-none absolute right-1.5 h-4 w-4 text-neutral-500 dark:text-neutral-400"
+                viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
               </svg>
+
+              <!-- Knob: slides to the active side and carries the icon for the mode you are IN. -->
+              <span
+                class="pointer-events-none relative z-10 flex h-5 w-5 translate-x-1 dark:translate-x-8 items-center justify-center rounded-full bg-white dark:bg-neutral-900 shadow transition-transform duration-300">
+                <svg class="h-3 w-3 text-neutral-700 dark:hidden" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <svg class="hidden h-3 w-3 text-neutral-200 dark:block" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+              </span>
             </button>
 
             <!-- Mobile menu button -->
@@ -1621,18 +1663,23 @@
       </nav>
 
       <script>
-        // Dark mode toggle
+        // Dark mode toggle. The .dark class is set before first paint by the bootstrap
+        // script in <head>, and the switch's knob/icons follow it purely through CSS
+        // `dark:` variants — so all that is left here is the click and the a11y state.
         const darkModeToggle = document.getElementById('darkModeToggle');
+
+        const syncDarkModeState = () => {
+          const isDark = document.documentElement.classList.contains('dark');
+          darkModeToggle.setAttribute('aria-checked', String(isDark));
+        };
+
         darkModeToggle.addEventListener('click', () => {
           document.documentElement.classList.toggle('dark');
           localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+          syncDarkModeState();
         });
 
-        // Check for saved dark mode preference
-        if (localStorage.getItem('darkMode') === 'true' ||
-          (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.classList.add('dark');
-        }
+        syncDarkModeState();
 
         // Mobile menu toggle
         const menuBtn = document.getElementById('menuBtn');
@@ -1653,19 +1700,20 @@
   <htmlcode>
     <div id="root">
       <section id="hero"
-        class="min-h-[70vh] flex items-center justify-center bg-neutral-900 dark:bg-neutral-900 text-white font-mono">
+        class="min-h-[70vh] flex items-center justify-center bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white font-mono transition-colors duration-300">
         <div class="max-w-3xl mx-auto px-4 text-center animate__animated animate__fadeIn">
           <div class="space-y-6">
             <h1 class="text-4xl md:text-5xl font-bold mb-2 animate__animated animate__fadeInDown">
               hi, i am himanshu!
             </h1>
 
-            <div class="bg-neutral-800/50 p-6 rounded-lg backdrop-blur-sm animate__animated animate__fadeInUp">
-              <p class="text-lg text-neutral-300 mb-4">
-                vim enthusiast focussing on building better software
+            <div
+              class="bg-white/70 dark:bg-neutral-800/50 p-6 rounded-lg backdrop-blur-sm animate__animated animate__fadeInUp">
+              <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-4">
+                tech agnostic software engineer, maximizing on high agency
               </p>
-              <p class="text-neutral-400">
-                i mainly work in backend development </p>
+              <p class="text-neutral-600 dark:text-neutral-400">
+                vim enthusiast, custom roms ricing </p>
             </div>
 
             <div class="flex justify-center space-x-4 pt-8 animate__animated animate__fadeInUp animate__delay-1s">
@@ -1673,7 +1721,7 @@
                 view my work
               </a> -->
               <a href="#contact"
-                class="px-6 py-2 border border-neutral-700 hover:border-neutral-600 rounded-lg transition-colors">
+                class="px-6 py-2 border border-neutral-300 hover:border-neutral-400 dark:border-neutral-700 dark:hover:border-neutral-600 rounded-lg transition-colors">
                 contact me
               </a>
             </div>
@@ -1685,20 +1733,6 @@
         </div>
       </section>
 
-      <script>
-        // Animate elements when they come into view
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate__animated', 'animate__fadeIn');
-            }
-          });
-        });
-
-        document.querySelectorAll('#hero > *').forEach((element) => {
-          observer.observe(element);
-        });
-      </script>
     </div>
   </htmlcode>
   <htmlcode>
@@ -1741,8 +1775,8 @@
                   current focus
                 </h3>
                 <ul class="list-disc list-inside text-neutral-600 dark:text-neutral-300 font-mono space-y-2">
-                  <li>building backend systems with Go</li>
-                  <li>learning system design</li>
+                  <li>backend architecture and design</li>
+                  <li>Bullet Journaling :)</li>
                   <!-- <li>learning competitive programming algorithms</li> -->
                 </ul>
               </div>
@@ -1751,105 +1785,111 @@
         </div>
       </section>
 
-      <script>
-        // Intersection Observer for scroll animations
-        const aboutObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate__animated', 'animate__fadeInUp');
-              aboutObserver.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1
-        });
-
-        // Observe all animated elements in the about section
-        document.querySelectorAll('#about .animate__animated').forEach((el) => {
-          aboutObserver.observe(el);
-        });
-      </script>
     </div>
   </htmlcode>
   <htmlcode>
     <div id="root">
-      <section id="experience" class="py-20 bg-neutral-900 dark:bg-neutral-900">
+      <section id="experience" class="py-20 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-300">
         <div class="max-w-3xl mx-auto px-4">
           <h2
-            class="text-2xl font-mono font-bold text-neutral-100 text-center mb-12 animate__animated animate__fadeIn animate__fadeInUp">
+            class="text-2xl font-mono font-bold text-neutral-800 dark:text-neutral-100 text-center mb-12 animate__animated animate__fadeIn animate__fadeInUp">
             experience
           </h2>
 
           <div class="space-y-8">
             <!-- Experience Item 1 -->
             <div
-              class="bg-neutral-800 p-6 rounded-lg shadow-lg hover:bg-neutral-700 transition-colors duration-300 animate__animated animate__fadeInUp">
+              class="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm dark:shadow-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors duration-300 animate__animated animate__fadeInUp">
               <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                <h3 class="text-lg font-mono text-neutral-100">swe intern @ ordbit</h3>
-                <span class="text-sm font-mono text-neutral-400">Dec 2024 - Present</span>
+                <h3 class="text-lg font-mono text-neutral-800 dark:text-neutral-100">sde @ vama</h3>
+                <span class="text-sm font-mono text-neutral-500 dark:text-neutral-400">Dec 2025 - Current</span>
               </div>
               <div class="space-y-2">
-                <p class="text-neutral-300 font-mono text-sm">
-                  • developed microservices to address business requirements & enhance system functionality
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm">
+                  • shipment provider integration automating fulfillment for 10k+ monthly orders
                 </p>
-                <p class="text-neutral-300 font-mono text-sm">
-                  • served as primary point of contact to resolve client issues
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm">
+                  • ai voice assistant workflows for re-engaging churned users
+                </p>
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm">
+                  • mp4 &rarr; hls transcoding for vama tv, 40% less buffering
+                </p>
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm">
+                  • low-latency apis powering the app &amp; web homepage
+                </p>
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm">
+                  • api throttling middleware hardening backend infra &amp; api security
                 </p>
               </div>
             </div>
 
             <!-- Experience Item 2 -->
             <div
-              class="bg-neutral-800 p-6 rounded-lg shadow-lg hover:bg-neutral-700 transition-colors duration-300 animate__animated animate__fadeInUp animate__delay-1s">
+              class="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm dark:shadow-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors duration-300 animate__animated animate__fadeInUp animate__delay-1s">
               <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                <h3 class="text-lg font-mono text-neutral-100">swe intern @ human insight ventures</h3>
-                <span class="text-sm font-mono text-neutral-400">2023</span>
+                <h3 class="text-lg font-mono text-neutral-800 dark:text-neutral-100">software engineer @ icici lombard
+                </h3>
+                <span class="text-sm font-mono text-neutral-500 dark:text-neutral-400">Aug 2025 - Dec 2025</span>
               </div>
               <div class="space-y-2">
-                <p class="text-neutral-300 font-mono text-sm">
-                  • worked with team of 5 on kitaabnama, an online reading platform
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm">
+                  • query optimization across apps &amp; apis, 20% faster page loads
                 </p>
-                <p class="text-neutral-300 font-mono text-sm">
-                  • redesigned ui & implemented core features for better reading experience
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm">
+                  • automated keycloak credential rotation with hangfire
+                </p>
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm">
+                  • bulk access provisioning in python, fixed redis cache invalidation
+                </p>
+              </div>
+            </div>
+
+            <!-- Experience Item 3 -->
+            <div
+              class="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm dark:shadow-lg hover:bg-neutral-50 dark:hover:bg-neutral-700 transition-colors duration-300 animate__animated animate__fadeInUp animate__delay-2s">
+              <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                <h3 class="text-lg font-mono text-neutral-800 dark:text-neutral-100">swe intern @ ordbit</h3>
+                <span class="text-sm font-mono text-neutral-500 dark:text-neutral-400">Dec 2024 - July 2025</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm">
+                  • token rewards service automating incentives, +30% retention
+                </p>
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm">
+                  • evm chain bridging for btc-backed loans, api &amp; redis migration
+                </p>
+                <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm">
+                  • load testing with grafana k6, primary contact for client issues
                 </p>
               </div>
             </div>
 
             <!-- Skills Section -->
-            <div class="mt-12 pt-8 border-t border-neutral-700 animate__animated animate__fadeInUp animate__delay-2s">
-              <h3 class="text-lg font-mono text-neutral-100 mb-6 text-center">technical skills used</h3>
+            <div
+              class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700 animate__animated animate__fadeInUp animate__delay-3s">
+              <h3 class="text-lg font-mono text-neutral-800 dark:text-neutral-100 mb-6 text-center">technical skills
+                used</h3>
               <div class="flex flex-wrap justify-center gap-3">
-                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">Go</span>
-                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">Gin</span>
-                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">Python</span>
-                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">Django</span>
-                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">PostgreSQL</span>
-                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">Docker</span>
-                <span class="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-mono">AWS</span>
+                <span
+                  class="px-3 py-1 bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 rounded-full text-sm font-mono">Go</span>
+                <span
+                  class="px-3 py-1 bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 rounded-full text-sm font-mono">Gin</span>
+                <span
+                  class="px-3 py-1 bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 rounded-full text-sm font-mono">Python</span>
+                <span
+                  class="px-3 py-1 bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 rounded-full text-sm font-mono">Django</span>
+                <span
+                  class="px-3 py-1 bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 rounded-full text-sm font-mono">PostgreSQL</span>
+                <span
+                  class="px-3 py-1 bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 rounded-full text-sm font-mono">Docker</span>
+                <span
+                  class="px-3 py-1 bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 rounded-full text-sm font-mono">AWS</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <script>
-        // Intersection Observer for scroll animations
-        const experienceObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate__animated', 'animate__fadeInUp');
-              experienceObserver.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1
-        });
-
-        // Observe all animated elements in the experience section
-        document.querySelectorAll('#experience .animate__animated').forEach((el) => {
-          experienceObserver.observe(el);
-        });
-      </script>
     </div>
   </htmlcode>
   <htmlcode>
@@ -1928,24 +1968,6 @@
         </div>
       </section>
 
-      <script>
-        // Intersection Observer for scroll animations
-        const projectsObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate__animated', 'animate__fadeInUp');
-              projectsObserver.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1
-        });
-
-        // Observe all animated elements in the projects section
-        document.querySelectorAll('#projects .animate__animated').forEach((el) => {
-          projectsObserver.observe(el);
-        });
-      </script>
     </div>
   </htmlcode>
   <!-- <htmlcode>
@@ -2031,23 +2053,24 @@
   </htmlcode> -->
   <htmlcode>
     <div id="root">
-      <section id="blogs" class="py-20 bg-neutral-900 dark:bg-neutral-900">
+      <section id="blogs" class="py-20 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-300">
         <div class="max-w-3xl mx-auto px-4">
-          <h2 class="text-2xl font-mono font-bold text-neutral-100 text-center mb-12 animate__animated animate__fadeIn">
+          <h2
+            class="text-2xl font-mono font-bold text-neutral-800 dark:text-neutral-100 text-center mb-12 animate__animated animate__fadeIn">
             blogs
           </h2>
 
           <div class="space-y-8">
             <!-- Technical Blogs -->
             <div class="space-y-6">
-              <h3 class="text-lg font-mono text-neutral-200 mb-6">technical blogs</h3>
+              <h3 class="text-lg font-mono text-neutral-700 dark:text-neutral-200 mb-6">technical blogs</h3>
               <div class="grid gap-6">
                 <a href="#"
-                  class="block bg-neutral-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow animate__animated animate__fadeInUp">
-                  <span class="text-sm font-mono text-neutral-400">Dec 15, 2024</span>
-                  <h4 class="text-neutral-100 dark:text-neutral-100 font-mono font-semibold mt-2">understanding the unix
+                  class="block bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow animate__animated animate__fadeInUp">
+                  <span class="text-sm font-mono text-neutral-500 dark:text-neutral-400">Dec 15, 2024</span>
+                  <h4 class="text-neutral-800 dark:text-neutral-100 font-mono font-semibold mt-2">understanding the unix
                     philosophy</h4>
-                  <p class="text-neutral-300 dark:text-neutral-300 font-mono text-sm mt-2">set of cultural norms &
+                  <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm mt-2">set of cultural norms &
                     philosophical approaches to minimalist, modular software development</p>
                 </a>
               </div>
@@ -2055,13 +2078,13 @@
 
             <!-- Guides -->
             <div class="space-y-6">
-              <h3 class="text-lg font-mono text-neutral-200 ">guides</h3>
+              <h3 class="text-lg font-mono text-neutral-700 dark:text-neutral-200 ">guides</h3>
               <div class="grid gap-6">
                 <a href="#"
-                  class="block bg-neutral-800 dark:bg-neutral-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow animate__animated animate__fadeInUp animate__delay-1s">
-                  <span class="text-sm font-mono text-neutral-400 dark:text-neutral-400">Nov 30, 2023</span>
-                  <h4 class="text-neutral-100 dark:text-neutral-100 font-mono font-semibold mt-2">basics to neovim</h4>
-                  <p class="text-neutral-300 dark:text-neutral-300 font-mono text-sm mt-2">a beginner's guide for the
+                  class="block bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow animate__animated animate__fadeInUp animate__delay-1s">
+                  <span class="text-sm font-mono text-neutral-500 dark:text-neutral-400">Nov 30, 2023</span>
+                  <h4 class="text-neutral-800 dark:text-neutral-100 font-mono font-semibold mt-2">basics to neovim</h4>
+                  <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm mt-2">a beginner's guide for the
                     barebone neovim config</p>
                 </a>
               </div>
@@ -2069,14 +2092,14 @@
 
             <!-- CP Algorithms -->
             <div class="space-y-6">
-              <h3 class="text-lg font-mono text-neutral-200">things i'm learning</h3>
+              <h3 class="text-lg font-mono text-neutral-700 dark:text-neutral-200">things i'm learning</h3>
               <div class="grid gap-6">
                 <a href="#"
-                  class="block bg-neutral-800 dark:bg-neutral-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow animate__animated animate__fadeInUp animate__delay-2s">
-                  <span class="text-sm font-mono text-neutral-400 dark:text-neutral-400">current focus</span>
-                  <h4 class="text-neutral-100 dark:text-neutral-100 font-mono font-semibold mt-2">understanding more
+                  class="block bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow animate__animated animate__fadeInUp animate__delay-2s">
+                  <span class="text-sm font-mono text-neutral-500 dark:text-neutral-400">current focus</span>
+                  <h4 class="text-neutral-800 dark:text-neutral-100 font-mono font-semibold mt-2">understanding more
                     about system architechture</h4>
-                  <p class="text-neutral-300 dark:text-neutral-300 font-mono text-sm mt-2">load balancer, repository
+                  <p class="text-neutral-600 dark:text-neutral-300 font-mono text-sm mt-2">load balancer, repository
                     pattern, dependency injection</p>
                 </a>
               </div>
@@ -2097,47 +2120,6 @@
         </div>
       </section>
 
-      <script>
-        // Intersection Observer for scroll animations
-        const blogsObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate__animated');
-              blogsObserver.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1
-        });
-
-        // Observe all animated elements in the blogs section
-        document.querySelectorAll('#blogs .animate__animated').forEach((el) => {
-          blogsObserver.observe(el);
-        });
-      </script>
-    </div>
-  </htmlcode>
-  <htmlcode>
-    <div id="root">
-
-      <script>
-        // Intersection Observer for scroll animations
-        const researchObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate__animated');
-              researchObserver.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1
-        });
-
-        // Observe all animated elements in the research section
-        document.querySelectorAll('#research .animate__animated').forEach((el) => {
-          researchObserver.observe(el);
-        });
-      </script>
     </div>
   </htmlcode>
   <htmlcode>
@@ -2265,29 +2247,13 @@
             });
           // console.log('Form submitted');
         });
-
-        // Intersection Observer for scroll animations
-        const contactObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate__animated');
-              contactObserver.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1
-        });
-
-        // Observe all animated elements in the contact section
-        document.querySelectorAll('#contact .animate__animated').forEach((el) => {
-          contactObserver.observe(el);
-        });
       </script>
     </div>
   </htmlcode>
   <htmlcode>
     <div id="root">
-      <footer id="footer" class="bg-neutral-900 dark:bg-neutral-900 text-neutral-400 py-12">
+      <footer id="footer"
+        class="bg-neutral-100 dark:bg-neutral-900 text-neutral-500 dark:text-neutral-400 py-12 transition-colors duration-300">
         <div class="max-w-3xl mx-auto px-4">
           <div class="flex flex-col items-center space-y-8">
             <!-- Logo/Name -->
@@ -2330,9 +2296,9 @@
 
             <!-- Copyright -->
             <div
-              class="text-center text-sm font-mono text-neutral-500 animate__animated animate__fadeIn animate__delay-3s">
+              class="text-center text-sm font-mono text-neutral-600 dark:text-neutral-500 animate__animated animate__fadeIn animate__delay-3s">
               <p>:wq</p>
-              <p>© 2025 made by himanshu</p>
+              <p>© 2026 made by himanshu</p>
               <p>all rights reserved</p>
             </div>
           </div>
@@ -2350,22 +2316,33 @@
           });
         });
 
-        // Intersection Observer for footer animations
-        const footerObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate__animated');
-              footerObserver.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.1
-        });
+        // One observer for the whole page, replacing the seven near-identical
+        // per-section ones. .animate__animated elements are held paused (and so
+        // invisible) by css/animate.css until .animate__play unpauses them here —
+        // the selector that hides them is the selector that reveals them, so no
+        // element can be left stranded.
+        (function () {
+          const targets = document.querySelectorAll('.animate__animated');
 
-        // Observe all animated elements in the footer
-        document.querySelectorAll('#footer .animate__animated').forEach((el) => {
-          footerObserver.observe(el);
-        });
+          if (!('IntersectionObserver' in window)) {
+            targets.forEach(el => el.classList.add('animate__play'));
+            return;
+          }
+
+          const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('animate__play');
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -5% 0px'
+          });
+
+          targets.forEach(el => revealObserver.observe(el));
+        })();
       </script>
     </div>
   </htmlcode><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1"

@@ -1,0 +1,158 @@
+/*
+ * Minimal animate.css-compatible subset.
+ *
+ * Only the classes this site actually uses are defined here (fadeIn / fadeInUp /
+ * fadeInDown / fadeInLeft / fadeInRight / bounce / infinite / delay-1s..3s),
+ * rather than pulling in the full ~70KB library for 8 animations.
+ *
+ * Elements marked .animate__animated start paused, which — combined with
+ * animation-fill-mode: both — holds them on the animation's first frame
+ * (opacity: 0). The IntersectionObserver in index.html adds .animate__play when
+ * the element scrolls into view, which unpauses it. Same selector hides and
+ * reveals, so nothing can get stuck invisible.
+ *
+ * Travel distances are deliberately smaller than upstream animate.css (which
+ * translates by 100% of the element's own size) because these classes are
+ * applied to full-width sections and cards, where 100% is an enormous jump.
+ */
+
+.animate__animated {
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+}
+
+.animate__animated.animate__play {
+  animation-play-state: running;
+}
+
+.animate__animated.animate__infinite {
+  animation-iteration-count: infinite;
+}
+
+.animate__animated.animate__delay-1s {
+  animation-delay: 0.15s;
+}
+
+.animate__animated.animate__delay-2s {
+  animation-delay: 0.3s;
+}
+
+.animate__animated.animate__delay-3s {
+  animation-delay: 0.45s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate__fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate__fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -2rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate__fadeInDown {
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-2rem, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate__fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(2rem, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate__fadeInRight {
+  animation-name: fadeInRight;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  53%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    transform: translate3d(0, -1.875rem, 0);
+  }
+
+  70% {
+    transform: translate3d(0, -0.9375rem, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -0.25rem, 0);
+  }
+}
+
+.animate__bounce {
+  animation-name: bounce;
+  transform-origin: center bottom;
+}
+
+/* Respect the OS "reduce motion" setting: show everything, animate nothing. */
+@media (prefers-reduced-motion: reduce) {
+  .animate__animated {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
